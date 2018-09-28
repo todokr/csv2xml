@@ -1,6 +1,6 @@
 # csv2xml
 
-Convert CSV to XML. Output is written to stdout.
+CLI tool that converts CSV to XML. Output is written to stdout so that you can handle output with pipe and redirect.
 
 ## Build
 
