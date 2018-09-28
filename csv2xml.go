@@ -24,15 +24,6 @@ func Map(vs []string, f func(string) string) []string {
 	return vsm
 }
 
-func All(vs []string, f func(string) bool) bool {
-	for _, v := range vs {
-		if !f(v) {
-			return false
-		}
-	}
-	return true
-}
-
 func SplitAsColumn(line string) []string {
 	return Map(strings.Split(line, ","), func(v string) string {
 		return strings.Trim(v, "\"")
