@@ -38,8 +38,8 @@ func main() {
 	)
 	flag.Parse()
 
-	if *file == "---" {
-		log.Fatal("declear -f option to open CSV")
+	if *file == "" {
+		log.Fatal("declare CSV file name to open with -f")
 	}
 
 	csv, err := os.Open(*file)
