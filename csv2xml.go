@@ -10,7 +10,7 @@ import (
 	"strings"
 )
 
-func reportError(err error) {
+func ReportError(err error) {
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -43,13 +43,13 @@ func main() {
 	}
 
 	csv, err := os.Open(*file)
-	reportError(err)
+	ReportError(err)
 	defer csv.Close()
 
 	reader := bufio.NewReader(csv)
 
 	headerLine, _, err := reader.ReadLine()
-	reportError(err)
+	ReportError(err)
 
 	headers := SplitAsColumn(string(headerLine))
 
@@ -61,7 +61,7 @@ func main() {
 		if err == io.EOF {
 			break
 		} else if err != nil {
-			reportError(err)
+			ReportError(err)
 		}
 
 		columns := SplitAsColumn(string(line))
